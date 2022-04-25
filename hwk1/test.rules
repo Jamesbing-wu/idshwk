@@ -1,0 +1,4 @@
+# Destination Port at 1080, TCPFLAG URG set, a string “hostip” in payload 10 th byte-20 th byte
+# Alert message "TEST ALERT"
+alert tcp any any -> any 1080 \
+    (msg: "TEST ALERT"; content: "hostip"; offset: 9; depth: 11; flags: U; sid: 1000000)
